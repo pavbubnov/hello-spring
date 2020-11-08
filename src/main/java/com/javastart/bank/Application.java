@@ -9,5 +9,6 @@ package com.javastart.bank;
  * И реализовать метод перевода денег с одного Account на другой (Transfer) в отдельном контроллере
  */
 
+
 public class Application {
 }
