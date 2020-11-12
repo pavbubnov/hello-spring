@@ -1,8 +1,13 @@
 spring:
+  application:
+    name: bank
   jpa:
     hibernate:
-      ddl-auto: create
-    database-platform: org.hibernate.dialect.PostgreSQLDialect
+      ddl-auto: create-drop
+      dialect: org.hibernate.dialect.PostgreSQL9Dialect
+      show_sql: true
+    properties.hibernate.temp.use_jdbc_metadata_defaults: false
+
   datasource:
     driver-class-name: org.postgresql.Driver
     url: "jdbc:postgresql://localhost:5432/bank"
