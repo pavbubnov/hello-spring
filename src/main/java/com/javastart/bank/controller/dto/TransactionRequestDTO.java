@@ -1,9 +1,14 @@
 package com.javastart.bank.controller.dto;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class TransactionRequestDTO {
 
+    @JsonProperty("SenderId")
     private Long senderId;
+    @JsonProperty("RecipientId")
     private Long recipientId;
+    @JsonProperty("TransferAmount")
     private Double transferAmount;
 
     public TransactionRequestDTO(Long transactionId, Long senderId, Long recipientId, Double transferAmount) {

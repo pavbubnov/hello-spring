@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Transaction {
@@ -12,10 +14,14 @@ public class Transaction {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long transactionId;
 
+    @NotNull(message = "Please, enter senderId")
     private Long senderId;
 
+    @NotNull(message = "Please, enter recipientId")
     private Long recipientId;
 
+    @NotNull(message = "Please, enter amount")
+    @Min(value = 0, message = "Please, enter correct value")
     private Double transferAmount;
 
     public Transaction(Long senderId, Long recipientId, Double transferAmount) {

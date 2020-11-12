@@ -1,6 +1,11 @@
 package com.javastart.bank.entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import javax.persistence.*;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Account {
@@ -9,11 +14,16 @@ public class Account {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long accountId;
 
+    @NotNull(message = "Please, enter your name")
     private String name;
 
+    @NotNull(message = "Please, enter your age")
+    @Min(value = 18, message = "You should be 18 y.o.")
+    @Max(value = 150, message = "Please, call to Guinness")
     private Integer age;
 
     @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @NotNull(message = "Please, enter your Bill")
     private Bill bill;
 
     public Account(String name, Integer age, Bill bill) {

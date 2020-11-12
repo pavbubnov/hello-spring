@@ -9,12 +9,12 @@ public class Message {
                 "new amount is " + account.getBill().getAmount();
     }
 
-    public static String paymantErrorMessage(Account account, Paymant paymant) {
-        return account.getName() + " have not enough money for paymant: " + paymant.getPaymantAmount() + ", account " +
+    public static String paymentErrorMessage(Account account, Payment payment) {
+        return account.getName() + " have not enough money for payment: " + payment.getPaymentAmount() + ", account " +
                 "amount is " + account.getBill().getAmount();
     }
 
-    public static String paymantSuccessMessage(Account account, Paymant paymant) {
-        return account.getName() + " pay " + paymant.getPaymantAmount() + ", new amount is " + account.getBill().getAmount();
+    public static String paymentSuccessMessage(Account account, Payment payment) {
+        return account.getName() + " pay " + payment.getPaymentAmount() + ", new amount is " + account.getBill().getAmount();
     }
 }

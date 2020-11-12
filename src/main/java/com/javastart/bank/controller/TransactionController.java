@@ -1,6 +1,7 @@
 package com.javastart.bank.controller;
 
-import com.javastart.bank.controller.dto.AccountResponseDTO;
+import com.javastart.bank.businessLogic.Adjustment;
+import com.javastart.bank.businessLogic.Payment;
 import com.javastart.bank.controller.dto.TransactionRequestDTO;
 import com.javastart.bank.controller.dto.TransactionResponseDTO;
 import com.javastart.bank.service.TransactionServise;
@@ -18,6 +19,16 @@ public class TransactionController {
     @Autowired
     public TransactionController(TransactionServise transactionServise) {
         this.transactionServise = transactionServise;
+    }
+
+    @PatchMapping("/accounts/adjustment/{id}")
+    public String getAdjustment(@PathVariable Long id, @RequestBody Adjustment adjustment) {
+        return transactionServise.adjustAmount(id, adjustment);
+    }
+
+    @PatchMapping("/accounts/payment/{id}")
+    public String getPayment(@PathVariable Long id, @RequestBody Payment payment) {
+        return transactionServise.payBill(id, payment);
     }
 
     @PostMapping("/transactions")

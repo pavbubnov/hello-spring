@@ -3,10 +3,6 @@ package com.javastart.bank.controller.dto;
 import com.javastart.bank.entity.Account;
 import com.javastart.bank.entity.Bill;
 
-import javax.persistence.CascadeType;
-import javax.persistence.FetchType;
-import javax.persistence.OneToOne;
-
 public class AccountResponseDTO {
 
     private Long accountId;
