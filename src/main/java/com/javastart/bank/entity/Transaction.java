@@ -14,14 +14,10 @@ public class Transaction {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long transactionId;
 
-    @NotNull(message = "Please, enter senderId")
     private Long senderId;
 
-    @NotNull(message = "Please, enter recipientId")
     private Long recipientId;
 
-    @NotNull(message = "Please, enter amount")
-    @Min(value = 0, message = "Please, enter correct value")
     private Double transferAmount;
 
     public Transaction(Long senderId, Long recipientId, Double transferAmount) {

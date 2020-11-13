@@ -1,8 +1,14 @@
 package com.javastart.bank.businessLogic;
 
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import javax.validation.constraints.NotNull;
+
 public class Adjustment {
 
+    @NotNull(message = "Please, enter how much cash you want to add")
+    @JsonProperty("Amount")
     private Double adjustmentAmount;
 
     public Adjustment(Double adjustmentAmount) {

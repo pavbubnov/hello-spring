@@ -1,7 +1,13 @@
 package com.javastart.bank.businessLogic;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import javax.validation.constraints.NotNull;
+
 public class Payment {
 
+    @NotNull(message = "Please, enter how much cash you want to pay")
+    @JsonProperty("Amount")
     private Double paymentAmount;
 
     public Payment(Double paymentAmount) {

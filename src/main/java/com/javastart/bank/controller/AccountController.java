@@ -5,12 +5,15 @@ import com.javastart.bank.controller.dto.AccountResponseDTO;
 import com.javastart.bank.entity.Bill;
 import com.javastart.bank.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
+@Validated
 public class AccountController {
 
     private final AccountService accountService;
@@ -21,7 +24,7 @@ public class AccountController {
     }
 
     @PostMapping("/accounts")
-    public Long createAccount(@RequestBody AccountRequestDTO accountRequestDTO) {
+    public Long createAccount(@Valid @RequestBody AccountRequestDTO accountRequestDTO) {
         return accountService.createAccount(accountRequestDTO.getName(),
                 accountRequestDTO.getAge(), accountRequestDTO.getBill());
     }
@@ -49,7 +52,7 @@ public class AccountController {
     }
 
     @PatchMapping("/accounts/{id}")
-    public String updateAccount(@PathVariable Long id, @RequestBody Bill bill) {
+    public String updateAccount(@PathVariable Long id, @Valid @RequestBody Bill bill) {
         return accountService.patchById(id, bill);
     }
 

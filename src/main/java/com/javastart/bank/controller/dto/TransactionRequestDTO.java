@@ -2,13 +2,22 @@ package com.javastart.bank.controller.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+
 public class TransactionRequestDTO {
 
     @JsonProperty("SenderId")
+    @NotNull(message = "Please, enter senderId")
     private Long senderId;
+
     @JsonProperty("RecipientId")
+    @NotNull(message = "Please, enter recipientId")
     private Long recipientId;
+
     @JsonProperty("TransferAmount")
+    @NotNull(message = "Please, enter amount")
+    @Min(value = 0, message = "Please, enter correct value")
     private Double transferAmount;
 
     public TransactionRequestDTO(Long transactionId, Long senderId, Long recipientId, Double transferAmount) {
