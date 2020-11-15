@@ -24,16 +24,6 @@ public class TransactionController {
         this.transactionServise = transactionServise;
     }
 
-    @PatchMapping("/accounts/adjustment/{id}")
-    public String getAdjustment(@PathVariable Long id, @Valid @RequestBody Adjustment adjustment) {
-        return transactionServise.adjustAmount(id, adjustment);
-    }
-
-    @PatchMapping("/accounts/payment/{id}")
-    public String getPayment(@PathVariable Long id, @Valid @RequestBody Payment payment) {
-        return transactionServise.payBill(id, payment);
-    }
-
     @PostMapping("/transactions")
     public String createTransaction(@Valid @RequestBody TransactionRequestDTO transactionRequestDTO) {
         return transactionServise.createTransaction(transactionRequestDTO.getSenderId(),

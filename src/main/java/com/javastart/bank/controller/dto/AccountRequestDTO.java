@@ -9,17 +9,17 @@ import javax.validation.constraints.NotNull;
 
 public class AccountRequestDTO {
 
-    @JsonProperty("Name")
+    @JsonProperty("name")
     @NotNull(message = "Please, enter your name")
     private String name;
 
-    @JsonProperty("Age")
+    @JsonProperty("age")
     @NotNull(message = "Please, enter your age")
     @Min(value = 18, message = "You should be 18 y.o.")
     @Max(value = 150, message = "Please, call to Guinness")
     private Integer age;
 
-    @JsonProperty("Bill")
+    @JsonProperty("bill")
     @NotNull(message = "Please, enter your Bill")
     private Bill bill;
 

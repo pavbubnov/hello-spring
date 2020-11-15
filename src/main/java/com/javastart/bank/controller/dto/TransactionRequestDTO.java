@@ -7,15 +7,15 @@ import javax.validation.constraints.NotNull;
 
 public class TransactionRequestDTO {
 
-    @JsonProperty("SenderId")
+    @JsonProperty("sender_id")
     @NotNull(message = "Please, enter senderId")
     private Long senderId;
 
-    @JsonProperty("RecipientId")
+    @JsonProperty("recipient_id")
     @NotNull(message = "Please, enter recipientId")
     private Long recipientId;
 
-    @JsonProperty("TransferAmount")
+    @JsonProperty("transfer_amount")
     @NotNull(message = "Please, enter amount")
     @Min(value = 0, message = "Please, enter correct value")
     private Double transferAmount;

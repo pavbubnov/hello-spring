@@ -51,5 +51,10 @@ public class AccountService {
         return "bill update";
     }
 
+    public void saveAccount (Account account) {
+        accountRepository.save(account);
+    }
+
+
 
 }

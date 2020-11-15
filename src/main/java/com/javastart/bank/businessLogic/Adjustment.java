@@ -8,7 +8,7 @@ import javax.validation.constraints.NotNull;
 public class Adjustment {
 
     @NotNull(message = "Please, enter how much cash you want to add")
-    @JsonProperty("Amount")
+    @JsonProperty("amount")
     private Double adjustmentAmount;
 
     public Adjustment(Double adjustmentAmount) {
