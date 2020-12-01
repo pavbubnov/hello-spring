@@ -17,7 +17,6 @@ public class Bill {
     private Long billId;
 
     @Min(value = 0, message = "Please, enter correct value")
-    @JsonProperty("amount")
     @NotNull(message = "Please, enter your amount")
     private Double amount;
 
