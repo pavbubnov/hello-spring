@@ -15,6 +15,7 @@ public class Message {
     }
 
     public static String paymentSuccessMessage(Account account, Payment payment) {
-        return account.getName() + " pay " + payment.getPaymentAmount() + ", new amount is " + account.getBill().getAmount();
+        return account.getName() + " pay " + payment.getPaymentAmount() + ", new amount is "
+                + account.getBill().getAmount();
     }
 }

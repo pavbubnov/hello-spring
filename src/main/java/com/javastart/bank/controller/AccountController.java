@@ -5,6 +5,7 @@ import com.javastart.bank.controller.dto.AccountResponseDTO;
 import com.javastart.bank.entity.Bill;
 import com.javastart.bank.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -30,6 +31,7 @@ public class AccountController {
     }
 
     @GetMapping("/accounts/{id}")
+    @Transactional
     public AccountResponseDTO getAccount(@PathVariable Long id) {
         return new AccountResponseDTO(accountService.getAccountById(id));
     }

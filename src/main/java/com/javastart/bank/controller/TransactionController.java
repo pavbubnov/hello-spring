@@ -1,7 +1,5 @@
 package com.javastart.bank.controller;
 
-import com.javastart.bank.businessLogic.Adjustment;
-import com.javastart.bank.businessLogic.Payment;
 import com.javastart.bank.controller.dto.TransactionRequestDTO;
 import com.javastart.bank.controller.dto.TransactionResponseDTO;
 import com.javastart.bank.service.TransactionServise;
